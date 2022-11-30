@@ -1,6 +1,11 @@
 class Pokemonchiki
   def initialize
     @pokebase = [{ name: 'pikachu', colour: 'yellow' }]
+
+    puts 'do you want to add new PoKeMoNs?'
+    puts 'Y - Yes. N - Show database of pokemons'
+    gets.chomp.downcase == 'y' ? create : show_all
+
   end
 
   # colorising text in total result!
