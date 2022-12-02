@@ -27,7 +27,10 @@ loop do
     pokebase.push({ name: pokemon, colour: colour })
     puts "Your pokemon #{pokemon.upcase.green} with colour #{colour.upcase.blue} was added to database <3"
   end
-  
+
   puts 'Total result:'.reverse_colour
   puts pokebase
+
+  puts 'Do you want add new pokemons? Yes or No'
+  gets.chomp.downcase == "yes" ? "okay!" : break
 end
