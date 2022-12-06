@@ -18,7 +18,7 @@ def where(pattern)
     if n.include?(pattern)
       puts n
     end
-  end 
+  end
 end
 
 def update(id, text)
@@ -49,7 +49,7 @@ end
 
 # index
 # find(1)
- where("Lorem")
+# where("Lorem")
 # update(0, "shsha")
 # delete(0)
 # create("TESTTEXT")
