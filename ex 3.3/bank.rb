@@ -1,10 +1,11 @@
 BALANCE = 'balance.txt'
 
 File.open(BALANCE, 'w') { |f| f.write 100.0 } unless File.exists?(BALANCE)
-balance = File.read(BALANCE)
-balance = balance.to_f
-
 loop do
+
+  balance = File.read(BALANCE)
+  balance = balance.to_f
+
   puts ''
   puts 'Вы можете:'
   puts 'Внести деньги (D)'
@@ -32,23 +33,27 @@ loop do
   when 'W'
     puts 'Какую сумму вывести:'
 
-    money = gets.chomp.to_i
+    withdraw = gets.chomp.to_i
 
-    if money > 0
-      sum = balance - money
+    if withdraw < balance || withdraw == balance
+      sum = balance - withdraw
       File.open(BALANCE, 'w') { |f| f.write sum }
 
-      puts "Вывод средств - #{money}"
+      puts '-' * 20
+      puts "Вывод средств - #{withdraw}"
+      puts '-' * 20
       puts "баланс - #{File.read(BALANCE)}"
+      puts '-' * 20
     else
       puts 'Ошибка, сумма меньше или равна нулю'
     end
 
   when 'B'
-    puts '--------------------'
+    puts '-' * 20
     puts "баланс - #{File.read(BALANCE)}"
-    puts '--------------------'
+    puts '-' * 20
   when 'Q'
     break
   end
+
 end

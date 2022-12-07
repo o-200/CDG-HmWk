@@ -13,9 +13,8 @@ loop do
       end
     end
   else
+    File.foreach(RESULTS) { |n| puts n }
     break
   end
-
-  File.foreach(RESULTS) { |n| puts n }
 end
 
