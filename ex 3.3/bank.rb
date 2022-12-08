@@ -12,13 +12,14 @@ loop do
   puts 'Вывести деньги (W)'
   puts 'Узнать баланс (B)'
   puts 'Выйти (Q)'
+  puts ''
 
   func = gets.chomp.to_s
 
   case func.capitalize
   when 'D'
     puts 'Внесите сумму для пополнения:'
-    money = gets.chomp.to_i
+    money = gets.chomp.to_f
 
     if money > 0
       sum = balance + money
@@ -33,7 +34,7 @@ loop do
   when 'W'
     puts 'Какую сумму вывести:'
 
-    withdraw = gets.chomp.to_i
+    withdraw = gets.chomp.to_f
 
     if withdraw < balance || withdraw == balance
       sum = balance - withdraw
@@ -49,6 +50,7 @@ loop do
     end
 
   when 'B'
+    puts ''
     puts '-' * 20
     puts "баланс - #{File.read(BALANCE)}"
     puts '-' * 20
