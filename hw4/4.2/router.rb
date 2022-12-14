@@ -88,7 +88,6 @@ class PostsController
 
     if !@posts[idpost].nil?
       @posts.delete_at(idpost)
-      puts @posts
       puts 'completed'
     else
       puts 'You are choosed a wrong id post'
