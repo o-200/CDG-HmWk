@@ -11,15 +11,15 @@ class CashMachine
     if value.positive?
       @balance += value
     else
-      'Ошибка, сумма меньше или равна нулю.'
+      raise 'Ошибка, сумма меньше или равна нулю.'
     end
   end
 
   def withdraw(value)
-    if value < @balance
+    if value < @balance && !value.negative?
       @balance -= value
     else
-      'Сумма для вывода больше баланса.'
+      raise 'Ошибка. Сумма для вывода больше баланса или отрицательная'
     end
   end
 end
