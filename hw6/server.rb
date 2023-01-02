@@ -19,12 +19,16 @@ while connection = server.accept
   })
 
   connection.print("HTTP/1.1 #{status}\r\n")
+
   headers.each do |key, value|
     connection.print("#{key}: #{value}\r\n")
   end
+
   connection.print "\r\n"
+
   body.each do |part|
     connection.print(part)
   end
+
   connection.close
 end
