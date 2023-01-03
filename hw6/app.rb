@@ -3,7 +3,7 @@ require './CashMachine'
 
 class App
   def initialize
-    @cash = CashMachine.new         # (params['value'].to_i)
+    @cash = CashMachine.new
   end
 
   def call(env)
