@@ -21,10 +21,10 @@ class App
       [200, {'Content-Type' => 'text/html'}, ["<h1>#{result}</h1>"]]
     when '/deposit'
       result = @cash.deposit(params['value'].to_f)
-      [302, {'Content-Type' => 'text/html'}, ["<h1>#{result}</h1>"]]
+      [200, {'Content-Type' => 'text/html'}, ["<h1>#{result}</h1>"]]
     when '/withdraw'
       result = @cash.withdraw(params['value'].to_f)
-      [302, {'Content-Type' => 'text/html'}, ["<h1>#{result}</h1>"]]
+      [200, {'Content-Type' => 'text/html'}, ["<h1>#{result}</h1>"]]
     else
       [404, {'Content-Type' => 'text/html'}, ["404"]]
     end
